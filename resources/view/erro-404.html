@@ -1,0 +1,61 @@
+{% extends "templates/main.html" %}
+
+{% block titulo1 %} página não encontrada {% endblock %}
+
+{% block header %}
+{{ parent() }}
+{% endblock %}
+
+{% block main %}
+<style>
+  .error-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .error-404__code {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #259bca;
+    margin: 0;
+    line-height: 1;
+  }
+  .error-404__title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin: 16px 0;
+  }
+  .error-404__message {
+    font-size: 1.125rem;
+    color: #555;
+    margin: 0 0 32px;
+    max-width: 500px;
+  }
+  .error-404__link {
+    display: inline-block;
+    padding: 12px 32px;
+    background: #259bca;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  .error-404__link:hover {
+    background: #0676a4;
+  }
+</style>
+<body data-home-page="Início.html" data-home-page-title="Início" data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="pt-br"> 
+    <section class="error-404">
+        <h1 class="error-404__code">404</h1>
+        <h2 class="error-404__title">Página não encontrada</h2>
+        <p class="error-404__message">Desculpe, a página que você procura não existe ou foi removida.</p>
+        <a href="{{ web_path }}/home" class="error-404__link">Voltar à página inicial</a>
+    </section>
+</body>
+{% endblock %}

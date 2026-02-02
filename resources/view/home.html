@@ -1,0 +1,172 @@
+{% extends "templates/main.html" %}
+
+{% block titulo2 %}home{% endblock %}
+
+{% block main %}
+<style>
+  .obra{
+    width: 467px;    
+    height: 365px;    
+    margin-left: 600px;
+  }
+
+  #obraDaSemana{
+    width: calc(1263px/5);    
+    height: calc(2102px/5);
+    position: absolute;
+    right: 200px;
+    border: 1px solid;
+    border-radius: 5px;
+  }
+</style>
+<body data-home-page="Início.html" data-home-page-title="Início" data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="pt-br"> 
+    <section class="u-clearfix u-section-1" id="sec-7317">
+      <div class="u-clearfix u-sheet u-valign-bottom u-sheet-1">
+        <p class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-1">Obra da Semana</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-2" id="sec-6c32">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-container-align-center u-container-style u-grey-10 u-group u-group-1">
+          <div class="u-container-layout u-valign-middle u-container-layout-1">
+            <p class="u-align-center u-text u-text-1" style="font-size: 25px; font-weight: 500;">Memórias postumas de Brás Cubas</p>
+            <div class="obra">
+              <img class="u-image u-image-default u-image-1" id="obraDaSemana" src="{{ web_path }}/public/images/assets/obraDaSemana/livro-da-semana.jpg" alt="" data-image-width="1280" data-image-height="926">
+            </div>
+            <p class="u-align-center u-text u-text-2">Após ter morrido, em pleno ano de 1869, Brás Cubas decide por narrar sua história e revisitar os fatos mais importantes de sua vida, a fim de se distrair na eternidade. A partir de então ele relembra de amigos como Quincas Borba, de sua displicente formação acadêmica em Portugal, dos amores de sua vida e ainda do privilégio que teve de nunca ter precisado trabalhar em sua vida.</p>
+            <a href="{{ web_path }}/livro/6" class="u-align-center u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-palette-2-dark-1 u-radius u-btn-1">ver disponibilidade </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-3" id="sec-3ccb">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-custom-font u-font-arial u-text u-text-black u-text-1"> Leituras Obrigatórias para Vestibulares</p>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-border-2 u-border-grey-40 u-container-style u-list-item u-repeater-item u-shape-rectangle">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
+                <img alt="" class="custom-expanded u-image u-image-default u-image-1" data-image-width="2000" data-image-height="1333" src="{{ web_path }}/public/images/assets/leituraVestibulares/download.jpg">
+                <h4 class="u-align-center u-text u-text-default u-text-2">O cortiço<br>
+                </h4>
+                <p class="u-align-center u-text u-text-3">Disponibilidade: 2 unidade(s)<br>
+                </p>
+                <a href="{{ web_path }}/livro/9" class="u-active-none u-align-center u-border-1 u-border-hover-palette-2-light-1 u-border-palette-2-dark-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-palette-2-dark-1 u-radius u-text-white u-btn-1">Mais detalhes </a>
+              </div>
+            </div>
+            <div class="u-border-2 u-border-grey-40 u-container-style u-list-item u-repeater-item u-shape-rectangle">
+              <div class="u-container-layout u-similar-container u-container-layout-2">
+                <img alt="" class="custom-expanded u-image u-image-default u-image-2" data-image-width="2000" data-image-height="1333" src="{{ web_path }}/public/images/assets/leituraVestibulares/618-b9Im6dL._AC_UF1000,1000_QL80_.jpg">
+                <h4 class="u-align-center u-text u-text-default u-text-4">Vidas Secas</h4>
+                <p class="u-align-center u-text u-text-5"> Disponibilidade: 5 unidade(s)</p>
+                <a href="{{ web_path }}/livro/8" class="u-active-none u-align-center u-border-1 u-border-hover-palette-2-light-1 u-border-palette-2-dark-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-palette-2-dark-1 u-radius u-text-white u-btn-2"> Mais detalhes </a>
+              </div>
+            </div>
+            <div class="u-border-2 u-border-grey-40 u-container-style u-list-item u-repeater-item u-shape-rectangle">
+              <div class="u-container-layout u-similar-container u-container-layout-3">
+                <img alt="" class="custom-expanded u-image u-image-default u-image-3" data-image-width="2000" data-image-height="1333" src="{{ web_path }}/public/images/assets/leituraVestibulares/61Z2bMhGicL._AC_UF1000,1000_QL80_.jpg">
+                <h4 class="u-align-center u-text u-text-default u-text-6">Dom Casmurro</h4>
+                <p class="u-align-center u-text u-text-7"> Disponibilidade: 3 unidade(s)</p>
+                <a href="{{ web_path }}/livro/7" class="u-active-none u-align-center u-border-1 u-border-hover-palette-2-light-1 u-border-palette-2-dark-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-palette-2-dark-1 u-radius u-text-white u-btn-3"> Mais detalhes </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-container-align-center u-grey-5 u-section-4" id="sec-01ed">
+      <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+        <div class="u-border-2 u-border-grey-50 u-carousel u-expanded-width-xs u-gallery u-gallery-slider u-layout-carousel u-lightbox u-no-transition u-show-text-on-hover u-gallery-1" id="carousel-9dfb" data-interval="5000" data-u-ride="carousel">
+          <ol class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-1">
+            <li data-u-target="#carousel-9dfb" data-u-slide-to="0" class="u-active u-palette-2-dark-1 u-shape-circle" style="width: 10px; height: 10px;"></li>
+            <li data-u-target="#carousel-9dfb" data-u-slide-to="1" class="u-palette-2-dark-1 u-shape-circle" style="width: 10px; height: 10px;"></li>
+          </ol>
+          <div class="u-carousel-inner u-gallery-inner" role="listbox">
+            <div class="u-active u-border-1 u-border-grey-50 u-carousel-item u-effect-fade u-effect-hover-slide u-gallery-item u-carousel-item-1">
+              <div class="u-back-slide u-back-slide-1">
+                <img class="u-back-image u-effect-hover-slide-direction-left u-expanded u-back-image-1" src="{{ web_path }}/public/images/assets/escola/img.jpeg" alt="ETEC de Vila Formosa">
+              </div>
+              <div class="u-align-center u-over-slide u-shading u-valign-middle u-over-slide-1">
+                <h3 class="u-gallery-heading">ETEC de Vila Formosa</h3>
+                <p class="u-gallery-text">Livraria - 3º andar</p>
+              </div>
+            </div>
+            <div class="u-border-1 u-border-grey-75 u-carousel-item u-effect-fade u-effect-hover-slide u-gallery-item u-carousel-item-2">
+              <div class="u-back-slide u-back-slide-2">
+                <img class="u-back-image u-effect-hover-slide-direction-left u-expanded u-back-image-2" src="{{ web_path }}/public/images/assets/escola/img2.jpeg">
+              </div>
+              <div class="u-align-center u-over-slide u-shading u-valign-middle u-over-slide-2">
+                <h3 class="u-gallery-heading">ETEC de Vila Formosa</h3>
+                <p class="u-gallery-text">Livraria - 3º andar</p>
+              </div>
+            </div>
+          </div>
+          <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-hidden-sm u-hidden-xs u-opacity u-opacity-70 u-spacing-10 u-text-hover-palette-2-base u-text-palette-2-dark-1 u-carousel-control-1" href="#carousel-9dfb" role="button" data-u-slide="prev">
+            <span aria-hidden="true">
+              <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg>
+            </span>
+            <span class="sr-only">
+              <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg>
+            </span>
+          </a>
+          <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-hidden-sm u-hidden-xs u-opacity u-opacity-70 u-spacing-10 u-text-hover-palette-2-base u-text-palette-2-dark-1 u-carousel-control-2" href="#carousel-9dfb" role="button" data-u-slide="next">
+            <span aria-hidden="true">
+              <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg>
+            </span>
+            <span class="sr-only">
+              <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-5" id="carousel_ceab">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-custom-font u-font-arial u-text u-text-black u-text-1">Mais populares</p>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-border-2 u-border-grey-40 u-container-style u-list-item u-repeater-item u-shape-rectangle">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
+                <img alt="" class="custom-expanded u-image u-image-default u-image-1" data-image-width="2000" data-image-height="1333" src="{{ web_path }}/public/images/assets/popular/674d3e21a75e50.14519304.jpg">
+                <h4 class="u-align-center u-text u-text-default u-text-2">Clean Code<br>
+                </h4>
+                <p class="u-align-center u-text u-text-3">Disponibilidade: 10 unidade(s)<br>
+                </p>
+                <a href="{{ web_path }}/livro/2" class="u-active-none u-align-center u-border-1 u-border-hover-palette-2-light-1 u-border-palette-2-dark-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-palette-2-dark-1 u-radius u-text-white u-btn-1">Mais detalhes </a>
+              </div>
+            </div>
+            <div class="u-border-2 u-border-grey-40 u-container-style u-list-item u-repeater-item u-shape-rectangle">
+              <div class="u-container-layout u-similar-container u-container-layout-2">
+                <img alt="" class="custom-expanded u-image u-image-default u-image-2" data-image-width="2000" data-image-height="1333" src="{{ web_path }}/public/images/assets/popular/81LSCxGwvAL._SY425_.jpg">
+                <h4 class="u-align-center u-text u-text-default u-text-4">Algoritmos e Estruturas de Dados em Linguagem C</h4>
+                <p class="u-align-center u-text u-text-5"> Disponibilidade: 10 unidade(s)</p>
+                <a href="{{ web_path }}/livro/10" class="u-active-none u-align-center u-border-1 u-border-hover-palette-2-light-1 u-border-palette-2-dark-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-palette-2-dark-1 u-radius u-text-white u-btn-2"> Mais detalhes </a>
+              </div>
+            </div>
+            <div class="u-border-2 u-border-grey-40 u-container-style u-list-item u-repeater-item u-shape-rectangle">
+              <div class="u-container-layout u-similar-container u-container-layout-3">
+                <img alt="" class="custom-expanded u-image u-image-default u-image-3" data-image-width="2000" data-image-height="1333" src="{{ web_path }}/public/images/assets/popular/674d3e730b6074.59619532.jpg">
+                <h4 class="u-align-center u-text u-text-default u-text-6">Design Patterns</h4>
+                <p class="u-align-center u-text u-text-7"> Disponibilidade: 12 unidade(s)</p>
+                <a href="{{ web_path }}/livro/3" class="u-active-none u-align-center u-border-1 u-border-hover-palette-2-light-1 u-border-palette-2-dark-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-palette-2-dark-1 u-radius u-text-white u-btn-3"> Mais detalhes </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</body>
+{% endblock %}
+
+{% block footer %}
+  {{ parent() }}
+{% endblock %}

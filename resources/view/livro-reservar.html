@@ -1,0 +1,136 @@
+{% extends "templates/main.html" %}
+
+{% block importCss %}
+<link rel="stylesheet" href="{{ web_path }}/public/css/adicionar-livro.css" media="screen">
+{% endblock %}
+
+{% block nicepageScript %}
+
+{% endblock %}
+
+{% block titulo1 %} livro {% endblock %}
+
+{% block main %}
+<style>
+
+  img{
+    position: absolute;
+    width: 350px;
+    height: 500px;
+    border-radius: 10px;
+    margin-bottom: 250px;
+  }
+
+  #btn-wrapper{
+    position: absolute;
+    top: 200px;
+  }
+
+  .input{
+    opacity: 0;
+  }
+
+  .titulo{
+    position: absolute;
+    bottom: 350px;
+  }
+
+  .titulo > p{
+    font-size: xx-large;
+  }
+
+  .autor{
+    position: absolute;
+    bottom: 200px;
+  }
+
+  .ano{
+    position: absolute;
+    bottom: 250px;
+  }
+
+  .editora{
+    position: absolute;
+    bottom: 300px;
+  }
+
+  .data_devolucao{
+    position: absolute;
+    bottom: 100px;
+  }
+
+  .situacao{
+    position: absolute;
+    bottom: 150px;
+  }
+</style>
+<body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en">
+  <section class="u-clearfix u-section-1" id="sec-1d27">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <div class="u-border-1 u-border-grey-40 u-container-style u-expanded-width u-grey-10 u-group u-radius u-shape-round u-group-1">
+        <div class="u-clearfix u-form-spacing-13 u-form-vertical u-inner-form" style="padding: 5px;">
+          <div class="u-container-layout u-valign-middle u-container-layout-1">
+          <div class="u-clearfix u-group-elements u-group-elements-1" id="capa">
+            <img src="{{ livro.url }}" data-image-width="892" data-image-height="1280">
+          </div>
+          <div class="u-clearfix u-group-elements u-group-elements-2" id="placeholder">
+            {% if error_msg != '' %}
+              <div class="u-form-group u-label-none u-form-group-3 error_msg">
+                <p>{{ message }}</p>
+              </div>
+              {% endif %}
+          </div>
+          <div class="u-form u-form-1">
+              <div class="u-form-group u-form-name u-label-none">
+                <label class="u-label">Usuário</label>
+                <input type="text"  class="u-grey-15 u-input u-input-rectangle u-radius u-text-grey-40 u-input-1 input" autocomplete="off" required>
+                <input type="text"  class="u-grey-15 u-input u-input-rectangle u-radius u-text-grey-40 u-input-1 input" autocomplete="off" required>
+                <input type="text"  class="u-grey-15 u-input u-input-rectangle u-radius u-text-grey-40 u-input-1 input" autocomplete="off" required>
+                <input type="text"  class="u-grey-15 u-input u-input-rectangle u-radius u-text-grey-40 u-input-1 input" autocomplete="off" required>
+              </div>
+              <div class="u-form-email u-form-group u-label-none titulo">
+                <p>{{ livro.titulo }}</p>
+              </div>
+              <div class="u-form-group u-label-none u-form-group-3 autor">
+                <p>Autor: {{ livro.nome }}</p>
+              </div>
+              {% if livro.emprestado == 1 %}
+              <div class="u-form-group u-label-none u-form-group-3 situacao">
+                <p>Situação: RESERVADO</p>
+              </div>
+              {% else %}
+              <div class="u-form-group u-label-none u-form-group-3 situacao">
+                <p>Situação: DISPONÍVEL</p>
+              </div>
+              {% endif %}
+              <div class="u-form-group u-label-none u-form-group-4 ano">
+                <label  class="u-label">Input</label>
+                <p>Ano de publicacao: {{ livro.ano_publicacao }}</p>
+              </div>
+              <div class="u-form-group u-form-select u-label-none u-form-group-5">
+                <label class="u-label">List</label>
+                <div class="u-form-select-wrapper">
+
+                </div>
+              </div>
+              <div class="u-form-group u-label-none u-form-group-3 editora">
+                <label class="u-label">Input</label>
+                <p>Editora: {{ livro.editora }}</p>
+              </div>
+              
+              <div class="u-form-group u-label-none u-form-group-3 data_devolucao">
+                <label class="u-label">Input</label>
+                <p>Data de devolução do livro: {{ devolucao }}</p>
+              </div>
+              <div id="gap"></div>
+              <div class="u-align-center u-form-group u-form-submit u-label-none" id="btn-wrapper">
+                <a href="{{ web_path }}/reservar/{{ livro.id_livro }}" class="u-active-palette-2-light-1 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-2-light-1 u-palette-2-dark-1 u-radius u-btn-2">reservar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+{% endblock %}

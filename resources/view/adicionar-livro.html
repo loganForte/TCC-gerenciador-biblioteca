@@ -1,0 +1,124 @@
+{% extends "templates/main.html" %}
+
+{% block nicepageScript %}
+{% endblock %}
+
+{% block importCss %}
+<link rel="stylesheet" href="{{ web_path }}/public/css/adicionar-livro.css" media="screen">
+{% endblock %}
+
+{% block titulo2 %}adicionar livro{% endblock %}
+
+{% block main %}
+<style>
+#capa-livro-preview-wrapper{
+  width: 350px;
+  height: 500px;
+  border-radius: 22px;
+}
+#capa-livro-preview-wrapper > img{
+  width: 350px;
+  height: 500px;
+  border-radius: 22px;
+}
+#capa-livro-field{
+  position: absolute;
+  width: 350px;
+  height: 500px;
+  z-index: 100;
+  border: 1px solid;
+  user-select: none;
+  border-radius: 22px;
+  opacity: 0;
+}
+</style>
+  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en">
+    <section class="u-clearfix u-section-1" id="sec-1d27">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-border-1 u-border-grey-40 u-container-style u-expanded-width u-grey-10 u-group u-radius u-shape-round u-group-1">
+          <form action="./create" class="u-clearfix u-form-spacing-13 u-form-vertical u-inner-form" style="padding: 5px;" enctype="multipart/form-data" method="post">
+            <div class="u-container-layout u-valign-middle u-container-layout-1">
+            <div class="u-clearfix u-group-elements u-group-elements-1">
+              <img class="u-border-1 u-border-grey-90 u-expanded u-image u-image-round u-opacity u-opacity-5 u-radius u-image-1" src="{{ web_path }}/resources/imgs/photo-1702070540019-aef37a7bb001.jpeg" data-image-width="892" data-image-height="1280">
+              <div id="capa-livro-preview-wrapper">
+                <input type="file" name="capa-livro" id="capa-livro-field" accept="image/jpeg, image/png" required>
+              </div>
+            </div>
+            <div class="u-clearfix u-group-elements u-group-elements-2" id="placeholder">
+              <h5 class="u-custom-font u-font-roboto u-text u-text-grey-70 u-text-1 placeholder">Adicionar capa</h5><span class="u-file-icon u-icon u-text-grey-70 u-icon-1"><img src="{{ web_path }}/resources/imgs/1665629-abbd3f3a.png" class="placeholder"></span>
+            </div>
+            <div class="u-form u-form-1">
+              
+                <div class="u-form-group u-form-name u-label-none">
+                  <label for="titulo-field" class="u-label">Usuário</label>
+                  <input type="text" placeholder="Título" id="titulo-field" name="titulo" class="u-grey-15 u-input u-input-rectangle u-radius u-text-grey-40 u-input-1" autocomplete="off" required>
+                </div>
+                <div class="u-form-email u-form-group u-label-none">
+                  <label for="autor-field" class="u-label">Senha</label>
+                  <input type="text" placeholder="Autor" id="autor-field" name="autor" class="u-grey-15 u-input u-input-rectangle u-radius u-text-grey-40 u-input-2" autocomplete="off" required>
+                </div>
+                <div class="u-form-group u-label-none u-form-group-3">
+                  <label for="editora-field" class="u-label">Input</label>
+                  <input type="text" placeholder="Editora" id="editora-field" name="editora" class="u-grey-15 u-input u-input-rectangle u-radius u-text-grey-40 u-input-3" required>
+                </div>
+                <div class="u-form-group u-label-none u-form-group-4">
+                  <label for="ano-publicacao-field" class="u-label">Input</label>
+                  <input type="number" max="2024" min="1000" id="ano-publicacao-field" name="ano-publicacao" class="u-grey-15 u-input u-input-rectangle u-radius u-text-grey-40 u-input-4" placeholder="Ano de publicação" required>
+                </div>
+                <div class="u-form-group u-form-select u-label-none u-form-group-5">
+                  <label for="select-043f" class="u-label">List</label>
+                  <div class="u-form-select-wrapper">
+                    <select id="select-043f" name="categoria" class="u-grey-15 u-input u-input-rectangle u-radius u-text-grey-40 u-input-5" size="5" multiple="multiple" required>
+                      <option value="Aventura">Aventura</option>
+                      <option value="Romance">Romance</option>
+                      <option value="Informática">Informática</option>
+                      <option value="Filosofia">Filosofia</option>
+                      <option value="Divulgação Científica">Divulgação Científica</option>
+                      <option value="Literatura">Literatura</option>
+                      <option value="Historia">Historia</option>
+                    </select>
+                    <svg class="u-caret u-caret-svg u-text-grey-40" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+                  </div>
+                </div>
+                <div class="u-form-group u-form-number u-form-number-layout-number u-label-none u-form-group-6">
+                  <label for="quantidade-field" class="u-label">Number Input</label>
+                  <div class="u-input-row" data-value="0">
+                    <input value="0" min="0" max="20" step="1" type="number" id="quantidade-field" name="quantidade" class="u-grey-15 u-input u-input-rectangle u-number u-radius u-text-grey-40 u-input-6" required>
+                  </div>
+                </div>
+                <div class="u-align-center u-form-group u-form-submit u-label-none">
+                  <button type="submit" class="u-active-palette-2-light-1 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-2-light-1 u-palette-2-dark-1 u-radius u-btn-2">adicionar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</body>
+<script>
+  const div = document.getElementById("capa-livro-preview-wrapper");
+  const previewInput = document.getElementById("capa-livro-field");
+  const placeholder = document.getElementsByClassName("placeholder");
+  const form = document.getElementById("form");
+  
+  previewInput.addEventListener('change', function(e){
+    const file = this.files[0];
+    const capaView = document.createElement("img");
+    
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e){
+        capaView.src = e.target.result;
+        
+        div.insertAdjacentElement("beforeend",capaView);
+        placeholder[0].style.display = "none";
+        placeholder[1].style.display = "none";
+      }
+      reader.readAsDataURL(file);
+    }else{
+        capaView.src = "";
+    }
+  });
+</script>
+{% endblock %}

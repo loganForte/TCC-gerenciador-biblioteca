@@ -1,0 +1,107 @@
+{% extends "templates/main.html" %}    
+
+{% block nicepageScript %}
+{% endblock %}
+
+{% block importCss %}
+<link rel="stylesheet" href="{{ web_path }}/public/css/login.css" media="screen">
+{% endblock %}
+
+{% block titulo1 %}Login{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block main %}
+<style>
+  .message{
+    color: #c80003;
+    animation: shake 900ms;
+  }
+
+  #tipo-field{
+    margin-bottom: 20px;
+    margin-left: 35px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #363636;
+    color: white;
+  }
+
+  #tipo-field > option{
+    color: white;
+  }
+</style>
+  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="pt-br">
+    <section class="u-clearfix u-palette-5-dark-3 u-section-1" id="sec-bc0e">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-container-align-center u-container-style u-group u-radius u-shading u-shape-round u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h1 class="u-align-center u-custom-font u-font-arial u-text u-text-default u-text-1">Login</h1>
+            <div class="u-form u-form-1">
+              <form action="./login/check" class="u-clearfix u-form-spacing-36 u-form-vertical u-inner-form" style="padding: 5px;" method="post">
+                <select name="tipo" id="tipo-field">
+                  <option value="bibliotecario">BIBLIOTECARIO</option>
+                  <option value="aluno">ALUNO</option>
+                </select>
+                <div class="u-form-group u-form-name u-label-none" id="nome-wrapper">
+                  <label for="nome-field" class="u-label">Nome</label>
+                  <input type="text" placeholder="Nome" id="nome-field" name="nome" class="u-custom-font u-font-arial u-grey-50 u-input u-input-rectangle u-radius u-text-white u-input-1" autocomplete="off" required>
+                </div>
+
+                <div class="u-form-group u-form-name u-label-none">
+
+                  <label for="email-field" class="u-label">E-mail</label>
+                  <input type="email" placeholder="E-mail" id="email-field" name="email" class="u-custom-font u-font-arial u-grey-50 u-input u-input-rectangle u-radius u-text-white u-input-1" autocomplete="off" required>
+
+                </div>
+                <div class="u-form-group u-label-none">
+
+                  <label for="senha-field" class="u-label">Senha</label>
+                  <input type="password" placeholder="Senha" id="senha-field" name="senha" class="u-custom-font u-font-arial u-grey-50 u-input u-input-rectangle u-radius u-text-white u-input-2" autocomplete="off" required>
+                </div>
+                <div class="u-align-center u-form-group u-form-submit u-label-none">
+                  <button type="submit" class="u-active-palette-2-light-1 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-2-light-1 u-palette-2-dark-1 u-radius u-btn-1">LOGIN</button>
+                  {% if error_msg !=  '' %}
+                  <span><p  class="message">{{message|upper}}</p></span>
+                  {% endif %}
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</body>
+<script>
+  const tipo = document.querySelector("select");
+  const nome = document.getElementById("nome-wrapper");
+  const nomeInput = document.getElementById("nome-field");
+  const error = document.querySelector("p");
+  let tipo_user;
+
+  const query_string = new URLSearchParams(window.location.search);
+  query_string.forEach(item =>{
+    tipo_user = item;
+  });
+
+  if (tipo_user === "aluno") {
+      nome.style.display = "none";   
+      nomeInput.removeAttribute("required");
+      tipo.value = "aluno"
+  }
+
+  tipo.onchange = function(){
+    if (tipo.value === "aluno") {
+      nome.style.display = "none";   
+      nomeInput.removeAttribute("required");
+    }else{
+      nome.style.display = "inline-block";   
+      nomeInput.setAttribute("required",false);
+    }
+  }
+</script>
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+{% endblock%}

@@ -1,0 +1,90 @@
+{% extends "templates/main.html" %}
+
+{% block importCss %}
+<link rel="stylesheet" href="{{ web_path }}/public/css/conta.css" media="screen">
+{% endblock %}
+
+{% block titulo2 %} conta {% endblock %}
+
+{% block main %}
+<style>
+  #wrapper{
+    height: 190px;
+  }
+
+  .no-books{
+    text-align: center;
+    margin-top: 100px;
+  }
+  .no-books__title{
+    font-size: xx-large;
+    margin-bottom: 10px;
+  }
+  .no-books__info{
+    font-size: large;
+  }
+  
+</style>
+  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en">
+    <section class="u-clearfix u-section-1" id="sec-1d27">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-border-1 u-border-grey-75 u-container-style u-expanded-width u-grey-10 u-group u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <img class="u-image u-image-round u-radius u-image-1" src="{{ web_path }}/resources/imgs/925px-Unknown_person.jpg" alt="" data-image-width="925" data-image-height="1024">
+            <p class="u-custom-font u-font-arial u-text u-text-1">{{ session.nome }}</p>
+            <p class="u-custom-font u-font-arial u-text u-text-2">
+              <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-1">{{ session.tipo == "aluno" ? "Estudante" : "Bibliotecario" }} | EVF</a>
+            </p>
+          </div>
+          <a href="{{ web_path }}/logout" class="u-align-center u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-palette-2-dark-1 u-radius u-btn-1">SAIR</a>
+        </div>
+        <div class="u-container-style u-expanded-width u-grey-10 u-group u-group-2">
+          <div class="u-container-layout u-container-layout-2">
+            <div class="u-expanded-width u-list u-list-1">
+              <div class="u-repeater u-repeater-1">
+                {% if dados is not defined or dados|length == 0 %}
+                  <div class="no-books">
+                    <p class="no-books__title">Você não possui livros no momento.</p>
+                    <p class="no-books__info">Procure novos títulos em <a href="./livro">Todos os livros</a>.</p>
+                  </div>
+                {% endif %}
+
+                {% if session.tipo == "aluno" %}
+                  {% for dado in dados %}
+                  <div class="u-border-1 u-border-grey-75 u-container-style u-list-item u-repeater-item" id="wrapper">
+                    <div class="u-container-layout u-similar-container u-container-layout-3">
+                      <p class="u-custom-font u-font-arial u-text u-text-3">{{ dado.titulo }}</p>
+                      <img class="u-image u-image-default u-image-2" src="{{ dado.url }}" alt="" data-image-width="1280" data-image-height="825">
+                      <p class="u-custom-font u-font-arial u-text u-text-4">Escritor: {{ dado.nome }}</p>
+                      <p class="u-custom-font u-font-arial u-text u-text-5">Editora: {{ dado.editora }}</p>
+                      <p class="u-custom-font u-font-arial u-text u-text-5">Data da reserva: {{ dado.emprestimo }}</p>
+                      <p class="u-custom-font u-font-arial u-text u-text-6">Data de validade: {{ dado.devolucao }} - Faltam {{ dias_entrega }} dias para a devolução</p>
+                      <div class="u-border-1 u-border-grey-dark-1 u-line u-line-vertical u-line-1"></div>
+                    </div>
+                    <a href="{{ web_path }}/reservar/devolver/{{ dado.id_emprestimo }}" class="u-align-center u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-palette-2-dark-1 u-radius u-btn-1">devolver</a>
+                  </div>
+                  {% endfor %}
+                {% else %}
+                  {% for dado in dados %}  
+                  <div class="u-border-1 u-border-grey-75 u-container-style u-list-item u-repeater-item" id="wrapper">
+                    <div class="u-container-layout u-similar-container u-container-layout-3">
+                      <p class="u-custom-font u-font-arial u-text u-text-3">{{ dado.titulo }}</p>
+                      <img class="u-image u-image-default u-image-2" src="{{ dado.url }}" alt="" data-image-width="1280" data-image-height="825">
+                      <p class="u-custom-font u-font-arial u-text u-text-4">Escritor: {{ dado.autor }}</p>
+                      <p class="u-custom-font u-font-arial u-text u-text-5">Editora: {{ dado.editora }}</p>
+                      <p class="u-custom-font u-font-arial u-text u-text-5">Aluno: {{ dado.nome }} RM: {{ dado.RM }}</p>
+                      <p class="u-custom-font u-font-arial u-text u-text-5">Data da reserva: {{ dado.emprestimo }}</p>
+                      <p class="u-custom-font u-font-arial u-text u-text-6">Data de validade: {{ dado.devolucao }} - Faltam {{ dias_entrega }} dias para a devolução</p>
+                      <div class="u-border-1 u-border-grey-dark-1 u-line u-line-vertical u-line-1"></div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</body>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "templates/main.html" %}
+
+{% block importCss %}
+<link rel="stylesheet" href="{{ web_path }}/public/css/todos-os-livros.css">
+{% endblock %}
+
+
+{% block titulo2 %} {{ categoria_atual }} {% endblock %}
+
+
+{% block main %}
+<style>
+  .livros{
+    width: 373px;
+    height: 492px;
+  }
+
+  img{
+    position: absolute;
+    width: 373px;
+    height: 488px;
+  }
+
+  .categoria{
+    text-align: center;
+  }
+</style>
+  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en">
+    <section class="u-clearfix u-container-align-center u-section-1" id="sec-f185">
+      
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="categoria-wrapper">
+          <p class="categoria">Livros de <strong>{{ categoria_atual }}</strong></p>
+          <div class="u-border-1 u-border-grey u-line u-line-horizontal u-line-1"></div>
+        </div>
+        <div class="u-expanded-width u-list u-preserve-proportions u-list-1">
+          <div class="u-repeater u-repeater-1">
+            
+            {% for livro in livros %}
+            <div class="u-border-2 u-border-grey-50 u-container-style u-image u-list-item u-repeater-item u-image-1 livros">
+              <img src="{{ livro.url }}" >
+              <a href="{{ web_path }}/livro/{{ livro.id_livro }}">
+                <div class="u-container-layout u-similar-container u-container-layout-1">
+                  <div class="custom-expanded u-border-1 u-border-grey-30 u-border-no-bottom u-border-no-left u-container-style u-group u-radius u-shading u-shape-round u-group-1">
+                    <div class="u-container-layout u-container-layout-2">
+                      <p class="u-custom-font u-font-montserrat u-text u-text-1"> {{ livro.titulo }}<br>
+                      </p>
+                      <p class="u-custom-font u-font-arial u-text u-text-2"> {{ livro.nome }}<br>
+                      </p>
+                      <p class="u-custom-font u-font-arial u-text u-text-3">Editora: {{ livro.editora }}<br>
+                      </p>
+                      <p class="u-custom-font u-font-arial u-text u-text-4"> Ano de publicação: {{ livro.ano_publicacao }}<br>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+
+    </script>
+</body>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{
+    "require": {
+        "twig/twig": "^3.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "scripts": {
+        "db:create": "php database/create_database.php"
+    }
+}
