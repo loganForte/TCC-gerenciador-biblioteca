@@ -53,9 +53,5 @@ create table emprestimo(
 INSERT INTO alunos (RM, email_institucional, senha) VALUES 
 ('12345', 'user@email.com', '$2y$10$ASPivfMiH9eBgbzOx9Iu1.xO4XHhvq7y6OvgCtPAHKzGSDvRkP5Aa');
 
--- SENHA : 123
-
 INSERT INTO bibliotecaria (nome, email_institucional, senha, telefone) VALUES 
-('Bibliotecária 2', 'biblio2@escola.com', '$2y$10$UvxvLXDDGKmilGTwz454ieq084s8livzDcvxCIRPCb3Ia1xE9bBBy', '0987654321');
-
--- SENHA : biblio123
+('Bibliotecaria', 'biblio@email.com', '$2y$10$UvxvLXDDGKmilGTwz454ieq084s8livzDcvxCIRPCb3Ia1xE9bBBy', '0987654321');
