@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$sql_file = __DIR__ . "/create_databse.sql";
+$sql_file = __DIR__ . "/biblioteca.sql";
 
 $sql_script = file_get_contents($sql_file);
 
